@@ -1,0 +1,77 @@
+.brand-wheel {
+    --animationspeed: 40s;
+    --animationdelay: calc(var(--animationspeed) / 2);
+
+    flex-direction: row;
+    align-items: center;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    height: 200px;
+
+    .brand-slide,
+    .delay {
+        flex-shrink: 0;
+        height: 100%;
+        position: absolute;
+        animation-name: slide-animation;
+        animation-duration: var(--animationspeed);
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        min-width: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .delay {
+        transform: translateX(100%);
+        animation-name: delay-animation;
+    }
+
+    &:hover .brand-slide {
+        animation-play-state: paused;
+    }
+
+    .logo-card {
+        height: 100%;
+        display:flex;
+        flex-direction: column;
+        border: 1px solid white;
+        border-radius: 10px;
+        align-self: center;
+        padding: 30px;
+        animation: fade-in 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) forwards;
+        margin: 0 30px;
+    }
+
+    @keyframes fade-in {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+
+    @keyframes slide-animation {
+        from {
+            transform: translateX(0%);
+        }
+
+        to {
+            transform: translateX(-100%);
+        }
+    }
+
+    @keyframes delay-animation {
+        from {
+            transform: translateX(100%);
+        }
+
+        to {
+            transform: translateX(0%);
+        }
+    }
+}

@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -10,4 +14,21 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+.hero{
+  background: #D5E7D2;
+  /* background: url(./images/Hero.png) center no-repeat; */
+  display: flex;
+  justify-content: space-between;
+  height: 600px;
+}
+.memory:hover{
+  color: darkgreen;
+
+}
+@media only screen and (max-width: 700px) {
+  .hero {
+    display: flex;
+    flex-direction: column;
+  }
 }
